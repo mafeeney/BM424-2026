@@ -1,5 +1,5 @@
 ---
-title: "Group I Main Page"
+title: "Group I"
 ---
 
 ```{r setupI, include=FALSE}
@@ -34,6 +34,10 @@ news_date <- format(news_date, "%d %B, %Y")
 ## *`r inf_agent`* {.unnumbered}
 
 {{< include _includes/pathogenI.qmd >}}
+
+## *`r inf_agent`* - suggested reading {.unnumbered}
+
+{{< include _includes/refI.qmd >}}
 
 ## Public Opinion: News and E-mails {.unnumbered}
 

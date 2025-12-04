@@ -20,93 +20,42 @@ book:
   # Define chapters and contents here
   chapters:
     - index.qmd
-    - workshop4.qmd
-    - part: "Workshop 4, Group A"
-      chapters:
-        - workshop4/4A.qmd
-
-    - part: "Workshop 4, Group B"
-      chapters: 
-        - workshop4/4B.qmd
-
-    - part: "Workshop 4, Group C"
-      chapters: 
-        - workshop4/4C.qmd
-
-    - part: "Workshop 4, Group D"
-      chapters: 
-        - workshop4/4D.qmd
-
-    - part: "Workshop 4, Group E"
-      chapters: 
-        - workshop4/4E.qmd
-
-    - part: "Workshop 4, Group F"
-      chapters: 
-        - workshop4/4F.qmd
-
-    - part: "Workshop 4, Group G"
-      chapters: 
-        - workshop4/4G.qmd
-
-    - part: "Workshop 4, Group H"
-      chapters: 
-        - workshop4/4H.qmd
-
-    - part: "Workshop 4, Group I - 1"
-      chapters: 
-        - workshop4/4I1.qmd
-
-    - part: "Workshop 4, Group I - 2"
-      chapters: 
-        - workshop4/4I2.qmd
+    #display these files for workshop 4
+    #- workshop4.qmd
+    #- part: "Workshop 4, Group Information"
+      #chapters:
+        #- workshop4/4A.qmd
+        #- workshop4/4B.qmd
+        #- workshop4/4C.qmd
+        #- workshop4/4D.qmd
+        #- workshop4/4E.qmd
+        #- workshop4/4F.qmd
+        #- workshop4/4G.qmd
+        #- workshop4/4H.qmd
+        #- workshop4/4I1.qmd
+        #- workshop4/4I2.qmd
         
     - workshop3.qmd
-    - part: "Workshop 3, Group A"
+    - part: "Workshop 3, Group Information"
       chapters:
         - workshop3/3A.qmd
         - workshop3/dashboardA.qmd
-        - workshop3/refA.qmd
-    - part: "Workshop 3, Group B"
-      chapters: 
         - workshop3/3B.qmd
         - workshop3/dashboardB.qmd
-        - workshop3/refB.qmd
-    - part: "Workshop 3, Group C"
-      chapters: 
         - workshop3/3C.qmd
         - workshop3/dashboardC.qmd
-        - workshop3/refC.qmd
-    - part: "Workshop 3, Group D"
-      chapters: 
         - workshop3/3D.qmd
         - workshop3/dashboardD.qmd
-        - workshop3/refD.qmd
-    - part: "Workshop 3, Group E"
-      chapters: 
         - workshop3/3E.qmd
         - workshop3/dashboardE.qmd
-        - workshop3/refE.qmd
-    - part: "Workshop 3, Group F"
-      chapters: 
         - workshop3/3F.qmd
         - workshop3/dashboardF.qmd
-        - workshop3/refF.qmd
-    - part: "Workshop 3, Group G"
-      chapters: 
         - workshop3/3G.qmd
         - workshop3/dashboardG.qmd
-        - workshop3/refG.qmd
-    - part: "Workshop 3, Group H"
-      chapters: 
         - workshop3/3H.qmd
         - workshop3/dashboardH.qmd
-        - workshop3/refH.qmd
-    - part: "Workshop 3, Group I"
-      chapters: 
         - workshop3/3I.qmd
         - workshop3/dashboardI.qmd
-        - workshop3/refI.qmd
 
 # Formatting and theme; may not need to be changed
 format:
