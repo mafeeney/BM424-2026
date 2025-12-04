@@ -1,6 +1,3 @@
----
-title: "Group H - References"
----
 
 ```{r refH, include=FALSE}
 

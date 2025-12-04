@@ -1,6 +1,3 @@
----
-title: "Group E - References"
----
 
 ```{r refE, include=FALSE}
 

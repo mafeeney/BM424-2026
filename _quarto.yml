@@ -13,7 +13,7 @@ book:
   # Sets the page footer text/images
   page-footer:
     center: |
-      BM424 Workshops · 2024-25 · Dr Morgan Feeney
+      BM424 Workshops · 2025-26 · Dr Morgan Feeney
   author: "Dr Morgan Feeney"
   date: "28/02/2025"
 
@@ -63,7 +63,7 @@ format:
     theme: cosmo
     code-link: true
     fig-cap: true
-    author-meta: "Leighton Pritchard"
+    author-meta: "Morgan Feeney"
     sidebar:
       style: "always"
 

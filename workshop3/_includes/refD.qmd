@@ -1,6 +1,3 @@
----
-title: "Group D - References"
----
 
 ```{r refD, include=FALSE}
 
