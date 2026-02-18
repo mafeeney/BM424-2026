@@ -102,6 +102,10 @@ A team of scientists working together have in a PHS lab have isolated and cultur
 </table>  
 <br><br>
 
+## Hospital Dashboard
+
+{{< include _includes/hospdash.qmd >}}
+
 ## City and Hospital Pandemic Planning Resources {.unnumbered}
 
 {{< include _includes/briefing.qmd >}}

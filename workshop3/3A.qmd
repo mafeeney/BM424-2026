@@ -102,6 +102,10 @@ A team of scientists working together have cultured <i>Legionella pneumophila</i
 </table>  
 <br><br>
 
+## Hospital Dashboard
+
+{{< include _includes/hospdash.qmd >}}
+
 ## City and Hospital Pandemic Planning Resources {.unnumbered}
 
 {{< include _includes/briefing.qmd >}}

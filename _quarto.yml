@@ -39,23 +39,14 @@ book:
     - part: "Workshop 3, Group Information"
       chapters:
         - workshop3/3A.qmd
-        - workshop3/dashboardA.qmd
         - workshop3/3B.qmd
-        - workshop3/dashboardB.qmd
         - workshop3/3C.qmd
-        - workshop3/dashboardC.qmd
         - workshop3/3D.qmd
-        - workshop3/dashboardD.qmd
         - workshop3/3E.qmd
-        - workshop3/dashboardE.qmd
         - workshop3/3F.qmd
-        - workshop3/dashboardF.qmd
         - workshop3/3G.qmd
-        - workshop3/dashboardG.qmd
         - workshop3/3H.qmd
-        - workshop3/dashboardH.qmd
         - workshop3/3I.qmd
-        - workshop3/dashboardI.qmd
 
 # Formatting and theme; may not need to be changed
 format:
