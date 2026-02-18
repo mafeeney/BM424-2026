@@ -1,0 +1,411 @@
+---
+title: "Group E Hospital Dashboard"
+---
+
+```{r dashboardE, include=FALSE}
+#define variables for each group
+city_name <- "Rosmakirk"
+hosp_name <- "Horizon NHS"
+dis_name <- "Listeriosis"
+inf_agent <- "Listeria monocytogenes"
+inf_type <- "bact"
+group <- "E"
+set.seed(567) # Ensures reproducibility
+
+#define hospital data
+hosp_units <- sample(c("coronary care", "maternity care", "paediatric care", "dermatology", "gastroenterology", "radiology", "oncology", "neurology", "psychiatry", "nephrology", "endocrinology", "gynecology"), 4, replace = FALSE)
+clinic <- sample(c("an ear, nose, and throat clinic", "an eye clinic", "an orthopaedics department"), 1)
+
+# Define the link for the hospital image based on the group variable
+if (group == "A") {
+  hospital <- "images/hospitalA.jpg"
+} else if (group == "B") {
+  hospital <- "images/hospitalB.jpg"
+} else if (group == "C") {
+  hospital <- "images/hospitalC.jpg"
+} else if (group == "D") {
+  hospital <- "images/hospitalD.jpg"
+} else if (group == "E") {
+  hospital <- "images/hospitalE.jpg"
+} else if (group == "F") {
+  hospital <- "images/hospitalF.jpg"
+} else if (group == "G") {
+  hospital <- "images/hospitalG.jpg"
+} else if (group == "H") {
+  hospital <- "images/hospitalH.jpg"
+} else if (group == "I") {
+  hospital <- "images/hospitalI.jpg"
+} else if (group == "J") {
+  hospital <- "images/hospitalJ.jpg"
+} else if (group == "K") {
+  hospital <- "images/hospitalK.jpg"
+} else if (group == "L") {
+  hospital <- "images/hospitalL.jpg"
+} else if (group == "M") {
+  hospital <- "images/hospitalM.jpg"
+} else {
+  # Handle other cases if needed
+  hospital <- "images/hospital_default.jpg"
+}
+
+# Assign values for hospital metrics and wait times (rows 1-4)
+beds <- sample(100:200, 1)
+icu <- sample(10:20, 1)
+isolation <- sample(5:10, 1)
+bedocc <- sample(86:93, 1)
+icuocc <- sample(90:95, 1)
+isocc <- sample(94:98, 1)
+aeadmiss <- sample(6000:10000, 1)
+aewait <- sample(62:88, 1)
+ambwait <- sample(36:90, 1)
+refwait <- sample(60:85, 1)
+cancwait <- sample(60:85, 1)
+elecwait <- sample(6000:8500, 1)
+
+#include stats for infection control (rows 5-7)
+# Get the current year and the previous year
+current_year <- as.numeric(format(Sys.Date(), "%Y"))
+previous_year <- current_year - 1
+
+# Set the number of MRSA infections
+mrsa1 <- sample(1:10, 1)  # MRSA infections in the previous year
+mrsa2 <- sample(1:10, 1)  # MRSA infections in the current year
+
+if (mrsa2 - mrsa1 == 1) {
+  mrsa_result <- paste0("There was 1 more hospital-acquired MRSA infection in ", current_year, " than there were in ", previous_year, ".")
+} else if (mrsa2 - mrsa1 > 1) {
+  mrsa_result <- paste0("There were ", mrsa2 - mrsa1, " more hospital-acquired MRSA infections in ", current_year, " than there were in ", previous_year, ".")
+} else if (mrsa2 == mrsa1) {
+  mrsa_result <- paste0("There were the same number of hospital-acquired MRSA infections in ", previous_year, " and ", current_year, ".")
+} else if (mrsa1 - mrsa2 == 1) {
+  mrsa_result <- paste0("There was 1 fewer hospital-acquired MRSA infection in ", current_year, " than there were in ", previous_year, ".")
+} else {
+  mrsa_result <- paste0("There were ", mrsa1 - mrsa2, " fewer hospital-acquired MRSA infections in ", current_year, " than there were in ", previous_year, ".")
+}
+
+#Repeat the same code for Cdiff and Cauris
+
+# Set the number of *Clostridiodes difficile* infections
+Cdiff1 <- sample(1:10, 1)  # *Clostridiodes difficile* infections in the previous year
+Cdiff2 <- sample(1:10, 1)  # *Clostridiodes difficile* infections in the current year
+
+if (Cdiff2 - Cdiff1 == 1) {
+  Cdiff_result <- paste0("There was 1 more hospital-acquired *Clostridiodes difficile* infection in ", current_year, " than there were in ", previous_year, ".")
+} else if (Cdiff2 - Cdiff1 > 1) {
+  Cdiff_result <- paste0("There were ", Cdiff2 - Cdiff1, " more hospital-acquired *Clostridiodes difficile* infections in ", current_year, " than there were in ", previous_year, ".")
+} else if (Cdiff2 == Cdiff1) {
+  Cdiff_result <- paste0("There were the same number of hospital-acquired *Clostridiodes difficile* infections in ", previous_year, " and ", current_year, ".")
+} else if (Cdiff1 - Cdiff2 == 1) {
+  Cdiff_result <- paste0("There was 1 fewer hospital-acquired *Clostridiodes difficile* infection in ", current_year, " than there were in ", previous_year, ".")
+} else {
+  Cdiff_result <- paste0("There were ", Cdiff1 - Cdiff2, " fewer hospital-acquired *Clostridiodes difficile* infections in ", current_year, " than there were in ", previous_year, ".")
+}
+
+# Set the number of *Candida auris* infections
+Cauris1 <- sample(1:10, 1)  # *Candida auris* infections in the previous year
+Cauris2 <- sample(1:10, 1)  # *Candida auris* infections in the current year
+
+if (Cauris2 - Cauris1 == 1) {
+  Cauris_result <- paste0("There was 1 more hospital-acquired *Candida auris* infection in ", current_year, " than there were in ", previous_year, ".")
+} else if (Cauris2 - Cauris1 > 1) {
+  Cauris_result <- paste0("There were ", Cauris2 - Cauris1, " more hospital-acquired *Candida auris* infections in ", current_year, " than there were in ", previous_year, ".")
+} else if (Cauris2 == Cauris1) {
+  Cauris_result <- paste0("There were the same number of hospital-acquired *Candida auris* infections in ", previous_year, " and ", current_year, ".")
+} else if (Cauris1 - Cauris2 == 1) {
+  Cauris_result <- paste0("There was 1 fewer hospital-acquired *Candida auris* infection in ", current_year, " than there were in ", previous_year, ".")
+} else {
+  Cauris_result <- paste0("There were ", Cauris1 - Cauris2, " fewer hospital-acquired *Candida auris* infections in ", current_year, " than there were in ", previous_year, ".")
+}
+
+app_therapy <- sample(80:90, 1)
+desc <- sample(10:20, 1)
+amr_rate <- sample(30:60, 1)
+
+#include stats for community health data (rows 8-10)
+
+# Set the number of SARS-CoV2 infections
+covid1 <- sample(50:220, 1) #last week
+covid2 <- sample(50:220, 1) #this week
+
+# Ensure covid1 and covid2 are not the same
+if (covid1 == covid2) {
+  covid2 <- covid2 + 1
+}
+
+if (covid1 > covid2) {
+  Covid_result <- paste0("There were ", sample(10:50, 1), " more COVID-19 cases this week than in the previous week.")
+} else if (covid1 < covid2) {
+  Covid_result <- paste0("There were ", sample(10:50, 1), " fewer COVID-19 cases this week than in the previous week.")
+} else {
+ Covid_result <- paste0("There were ", sample(1:5, 1), " fewer COVID-19 cases this week than in the previous week.")
+}
+
+# Set the number of other viral infections
+virus1 <- sample(50:100, 1) #last week
+virus2 <- sample(150:250, 1) #this week
+
+
+covid_vacc <- sample(60:75, 1)
+vacc_rate <- sample(93:96, 1)
+
+```
+
+## Hospital Info {.unnumbered}
+
+The `r hosp_name`, built in `r sample(2008:2015, 1)`, is the main hospital in `r city_name`.
+
+The `r hosp_name` has units specialising in `r hosp_units` and `r clinic`.
+
+`r paste0("![The ", hosp_name , " hospital ](", hospital , ")")`
+
+
+## Hospital Capacity {.unnumbered}
+
+### Number and Capacity of Hospital Beds {.unnumbered}
+
+::: {.card .bg-dark .text-white}
+<div class="card-body text-center">
+  <i class="bi bi-hospital" style="font-size: 3rem;"></i>  
+  <h4>Hospital beds (general)</h4>
+  <p class="fs-2">`r beds`</p>
+</div>
+:::
+
+::: {.card .bg-primary .text-light}
+<div class="card-body text-center">
+  <i class="bi bi-thermometer-half" style="font-size: 3rem;"></i>  
+  <h4>Hospital beds (ICU)</h4>
+  <p class="fs-2">`r icu`</p>
+</div>
+:::
+
+::: {.card .bg-light .text-dark}
+<div class="card-body text-center">
+  <i class="bi bi-shield-virus" style="font-size: 3rem;"></i>  
+  <h4>Isolation beds</h4>
+  <p class="fs-2">`r isolation`</p>
+</div>
+:::
+
+::: {.card .bg-dark .text-white}
+<div class="card-body text-center">
+  <i class="bi bi-hospital" style="font-size: 3rem;"></i>  
+  <h4>Average bed occupancy (%)</h4>
+  <p class="fs-2">`r bedocc`%</p>
+</div>
+:::
+
+::: {.card .bg-primary .text-light}
+<div class="card-body text-center">
+  <i class="bi bi-thermometer-half" style="font-size: 3rem;"></i>  
+  <h4>Average ICU bed occupancy (%)</h4>
+  <p class="fs-2">`r icuocc`%</p>
+</div>
+:::
+
+::: {.card .bg-light .text-dark}
+<div class="card-body text-center">
+  <i class="bi bi-vignette" style="font-size: 3rem;"></i>  
+  <h4>Average isolation bed occupancy (%)</h4>
+  <p class="fs-2">`r isocc`%</p>
+</div>
+:::
+
+### Hospital Staffing Levels {.unnumbered}
+
+::: {.card .bg-success .text-white}
+<div class="card-body text-center">
+  <i class="bi bi-person-fill" style="font-size: 3rem;"></i>  
+  <h4>Number of hospital staff</h4>
+  <p class="fs-2">`r round(beds * (sample(c(0.6, 0.7, 0.8), 1)), digits = 0)`</p>
+</div>
+:::
+
+::: {.card .bg-warning .text-dark}
+<div class="card-body text-center">
+  <i class="bi bi-people-fill" style="font-size: 3rem;"></i>  
+  <h4>Number of hospital support staff</h4>
+  <p class="fs-2">`r round(beds/7, digits = 0)`</p>
+</div>
+:::
+
+::: {.card .bg-info .text-white}
+<div class="card-body text-center">
+  <i class="bi bi-vignette" style="font-size: 3rem;"></i>  
+  <h4>Clinical micro lab capacity (# tests/month)</h4>
+  <p class="fs-2">`r sample(1000:2000, 1)`</p>
+</div>
+:::
+
+
+## Key Performance Indicators {.unnumbered}
+
+### A&E Statistics {.unnumbered}
+
+::: card
+Statement from `r hosp_name`: As part of the `r hosp_name`'s ongoing commitment to excellence, the hospital diligently monitors key performance indicators and strives to meet established targets. While progress has been made, we acknowledge that certain goals remain unmet. We are actively working to address these challenges and enhance patient care.
+
+*Key Performance Targets:*
+
+-   Waiting time for an ambulance (category 2 event) should be no more than 18 minutes
+
+-   95% or more of all patients waiting in A&E should be seen in less than 4 hours
+
+-   85% of all patients waiting for cancer treatment should be seen within 62 days
+:::
+
+::: {.card `r ifelse(beds<150, ".bg-primary .text-white", ".bg-secondary .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-hospital" style="font-size: 3rem;"></i>  
+  <h4>Average number of admissions to A&E (monthly)</h4>
+  <p class="fs-2">`r aeadmiss`</p>
+</div>
+:::
+
+::: {.card `r ifelse(aewait>95, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-hourglass" style="font-size: 3rem;"></i>  
+  <h4>Average % of patients waiting &gt;4 hours in A&E</h4>
+  <p class="fs-2">`r aewait`%</p>
+</div>
+:::
+
+::: {.card `r ifelse(ambwait<18, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-clock" style="font-size: 3rem;"></i>  
+  <h4>Ambulance response times (minutes)</h4>
+  <p class="fs-2">`r ambwait` min</p>
+</div>
+:::
+
+### A&E Wait Times Metrics {.unnumbered}
+
+::: {.card `r ifelse(refwait>84, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-calendar3" style="font-size: 3rem;"></i>  
+  <h4>% of patients waiting &lt;62 days for referral (any)</h4>
+  <p class="fs-2">`r refwait`%</p>
+</div>
+:::
+
+::: {.card `r ifelse(cancwait>84, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-calendar3-event" style="font-size: 3rem;"></i>  
+  <h4>% of patients waiting &lt;62 days for cancer treatment</h4>
+  <p class="fs-2">`r cancwait`%</p>
+</div>
+:::
+
+::: {.card .bg-info .text-white}
+<div class="card-body text-center">
+  <i class="bi bi-calendar3-week" style="font-size: 3rem;"></i>  
+  <h4>Number of patients waiting for elective surgery</h4>
+  <p class="fs-2">`r elecwait`</p>
+</div>
+:::
+
+
+## Infection Control Metrics {.unnumbered}
+
+::: card
+The `r hosp_name` hospital strives to meet stringent targets for infection control and antibiotic stewardship to ensure patient safety and combat antimicrobial resistance. Infection control protocols are critical in maintaining high standards of hygiene and patient care. Similarly, antibiotic stewardship programs are essential for optimizing the use of antimicrobials, thereby reducing the risk of resistance and ensuring effective treatments for future generations.
+
+-   `r mrsa_result`
+
+-   `r Cdiff_result`
+
+-   `r Cauris_result`
+:::
+
+::: {.card `r ifelse(mrsa2<mrsa1, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-arrow-`r ifelse(mrsa2<mrsa1, "down-right", "up-right")`" style="font-size: 3rem;"></i>  
+  <h4>Hospital-acquired MRSA cases (trend)</h4>
+  <p class="fs-2">`r mrsa2`</p>
+</div>
+:::
+
+::: {.card `r ifelse(Cdiff2<Cdiff1, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-arrow-`r ifelse(Cdiff2<Cdiff1, "down-right", "up-right")`" style="font-size: 3rem;"></i>  
+  <h4>Hospital-acquired C. difficile cases (trend)</h4>
+  <p class="fs-2">`r Cdiff2`</p>
+</div>
+:::
+
+::: {.card `r ifelse(Cauris2<Cauris1, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-arrow-`r ifelse(Cauris2<Cauris1, "down-right", "up-right")`" style="font-size: 3rem;"></i>  
+  <h4>Hospital-acquired Candida auris cases (trend)</h4>
+  <p class="fs-2">`r Cauris2`</p>
+</div>
+:::
+
+::: {.card `r ifelse(app_therapy > 95, ".bg-success .text-white", ".bg-warning .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-prescription" style="font-size: 3rem;"></i>  
+  <h4>Antibiotic prescriptions judged appropriate (%)</h4>
+  <p class="fs-2">`r app_therapy`%</p>
+</div>
+:::
+
+::: {.card `r ifelse(desc > 15, ".bg-success .text-white", ".bg-warning .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-capsule-pill" style="font-size: 3rem;"></i>  
+  <h4>Antibiotic de-escalation rate (%)</h4>
+  <p class="fs-2">`r desc`%</p>
+</div>
+:::
+
+::: {.card `r ifelse(amr_rate > 50, ".bg-success .text-white", ".bg-warning .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-exclamation-diamond" style="font-size: 3rem;"></i>  
+  <h4>Prevalence of MDR-resistant organisms (%)</h4>
+  <p class="fs-2">`r amr_rate`%</p>
+</div>
+:::
+
+
+## Community Health Data {.unnumbered}
+
+::: card
+The `r hosp_name` monitors the prevalence of COVID-19 and other viruses in the community to ensure they are prepared for potential surges in patient admissions, enabling them to allocate resources and staff efficiently. By tracking these trends, the hospital can implement timely public health interventions and provide accurate information to the community to mitigate the spread of infections. Additionally, continuous monitoring helps in identifying emerging outbreaks early, allowing for a rapid response that minimizes the impact on public health and healthcare services.
+
+-   `r Covid_result`
+
+-   We are seeing an increase in infections caused by other respiratory viruses (e.g., influenza, adenovirus, rhinovirus, RSV).
+:::
+
+::: {.card `r ifelse(covid2<covid1, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-virus" style="font-size: 3rem;"></i>  
+  <h4>COVID-19 cases (weekly)</h4>
+  <p class="fs-2">`r covid1`</p>
+</div>
+:::
+
+::: {.card `r ifelse(virus2<virus1, ".bg-success .text-white", ".bg-danger .text-white")`}
+<div class="card-body text-center">
+  <i class="bi bi-virus2" style="font-size: 3rem;"></i>  
+  <h4>Other respiratory virus infections (weekly)</h4>
+  <p class="fs-2">`r virus1`</p>
+</div>
+:::
+
+::: {.card .bg-success .text-white}
+<div class="card-body text-center">
+  <i class="bi bi-clipboard2-pulse" style="font-size: 3rem;"></i>  
+  <h4>SARS-CoV2 vaccination rate (booster campaign)</h4>
+  <p class="fs-2">`r covid_vacc`%</p>
+</div>
+:::
+
+::: {.card .bg-warning .text-dark}
+<div class="card-body text-center">
+  <i class="bi bi-clipboard2-pulse" style="font-size: 3rem;"></i>  
+  <h4>Childhood vaccination rate (DTaP/IPV/Hib/HepB)</h4>
+  <p class="fs-2">`r vacc_rate`%</p>
+</div>
+:::
+
+
