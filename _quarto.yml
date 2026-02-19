@@ -45,6 +45,7 @@ book:
         - workshop3/3G.qmd
         - workshop3/3H.qmd
         - workshop3/3I.qmd
+        - workshop3/BM940w3.qmd
 
 # Formatting and theme; may not need to be changed
 format:

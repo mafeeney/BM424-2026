@@ -1,0 +1,61 @@
+---
+title: "Group BM940"
+---
+
+```{r setupBM940, include=FALSE}
+
+#define variables for each group: city and hospital name, infectious agent and disease, group letter
+city_name <- "Inverkeld"
+hosp_name <- "Queen Rose"
+dis_name <- "an unknown disease"
+inf_agent <- "an unknown pathogen"
+inf_type <- "bact"
+group <- "BM940"
+groupseed <- 940940
+
+```
+{{< include _includes/setup.qmd >}}
+::: panel-tabset
+## Pandemic Outbreak {.unnumbered}
+
+{{< include _includes/news1.qmd >}}
+
+## `r city_name` City Info {.unnumbered}
+
+{{< include _includes/city.qmd >}}
+
+## *`r inf_agent`* {.unnumbered}
+
+
+
+## *`r inf_agent`* - suggested reading {.unnumbered}
+
+
+
+## Public Opinion: News and E-mails {.unnumbered}
+
+{{< include _includes/emails3.qmd >}}
+
+## Data Collected for the Pandemic Response Committee Meeting {.unnumbered}
+
+{{< include _includes/data.qmd >}}
+
+* You can find more key information about the main hospital in `r city_name`, the `r hosp_name` in the [hospital dashboard](dashboardA.qmd).
+
+### Epidemiological Data {.unnumbered}
+
+
+
+## Hospital Dashboard
+
+{{< include _includes/hospdash.qmd >}}
+
+## City and Hospital Pandemic Planning Resources {.unnumbered}
+
+{{< include _includes/briefing.qmd >}}
+
+## Other useful resources/links {.unnumbered}
+
+{{< include _includes/resources.qmd >}}
+
+:::
