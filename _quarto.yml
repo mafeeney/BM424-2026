@@ -1,9 +1,7 @@
 project:
   type: book
   output-dir: _book
-  resources:
-    - workshop3/dashboardA.qmd  # Keep it listed so it gets rendered
-
+  
 book:
   title: "BM424 Clinical Microbiology Pandemic Preparedness Workshops"
   cover-image: sipbs_compbio_800.png
