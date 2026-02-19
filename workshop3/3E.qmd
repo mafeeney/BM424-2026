@@ -11,17 +11,9 @@ dis_name <- "Listeriosis"
 inf_agent <- "Listeria monocytogenes"
 inf_type <- "bact"
 group <- "E"
-set.seed(567) # Ensures reproducibility
-paper_name <- sample(c("Times", "Courier", "Express", "Chronicle", "Gazette", "Herald", "News", "Metro", "Sentinel", "Beacon", "Journal"), 1)
-
-#Define variables for the dates: 
-workshop3_date <- as.Date("2025-02-28", format="%Y-%m-%d")
-news_date <- workshop3_date - sample(c(3:6), 1)
-news_date <- format(news_date, "%d %B, %Y")
-
-
+groupseed <- 9002
 ```
-
+{{< include _includes/setup.qmd >}}
 ::: panel-tabset
 ## Pandemic Outbreak {.unnumbered}
 

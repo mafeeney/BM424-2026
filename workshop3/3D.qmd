@@ -11,17 +11,9 @@ dis_name <- "Campylobacteriosis"
 inf_agent <- "Campylobacter jejuni"
 inf_type <- "bact"
 group <- "D"
-set.seed(456) # Ensures reproducibility
-paper_name <- sample(c("Times", "Courier", "Express", "Chronicle", "Gazette", "Herald", "News", "Metro", "Sentinel", "Beacon", "Journal"), 1)
-
-#Define variables for the dates: 
-workshop3_date <- as.Date("2025-02-28", format="%Y-%m-%d")
-news_date <- workshop3_date - sample(c(3:6), 1)
-news_date <- format(news_date, "%d %B, %Y")
-
-
+groupseed <- 6802
 ```
-
+{{< include _includes/setup.qmd >}}
 ::: panel-tabset
 ## Pandemic Outbreak {.unnumbered}
 
