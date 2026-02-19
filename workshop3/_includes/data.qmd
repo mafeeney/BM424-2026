@@ -1,5 +1,4 @@
 ```{r data, include=FALSE}
-
 library(ggplot2)
 library(knitr)
 ```
@@ -16,7 +15,7 @@ library(knitr)
 
 ### City Demographics, Polling, and Budget {.unnumbered}
 
-The current population of `r city_name` (as of `r census_date`) is `r sample(150000:170000, size=1)`. The demographic data for the city is shown below.
+The current population of `r city_name` (as of `r census_year`) is `r sample(150000:170000, size=1)`. The demographic data for the city is shown below.
 
 ```{r A1, echo=FALSE, fig.cap="City demographics (Source: Office for National Statistics)"}
 
