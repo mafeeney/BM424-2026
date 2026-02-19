@@ -1,17 +1,4 @@
 
-```{r refA, include=FALSE}
-
-set.seed(123) # Ensures reproducibility 
-
-#define variables for each group: city and hospital name, infectious agent and disease, group letter
-city_name <- "Inverkeld"
-hosp_name <- "Queen Rose"
-dis_name <- "Legionellosis"
-inf_agent <- "Legionella pneumophila"
-inf_type <- "bact"
-group <- "A"
-```
-
 ::: callout-tip
 The following list of references is provided as a starting place for you to begin exploring various aspects of *`r inf_agent`* biology, diagnostics, epidemiology, and treatment. However, this is by no means an exhaustive list: you should further explore the relevant peer-reviewed literature independently.  
 :::

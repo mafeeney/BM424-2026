@@ -1,17 +1,4 @@
 
-```{r refC, include=FALSE}
-
-#define variables for each group: city and hospital name, infectious agent and disease, group letter
-city_name <- "Malleith"
-hosp_name <- "Central Highland"
-dis_name <- "MRSA"
-inf_agent <- "Staphylococcus aureus"
-inf_type <- "bact"
-group <- "C"
-set.seed(345) # Ensures reproducibility
-
-```
-
 ::: callout-tip
 The following list of references is provided as a starting place for you to begin exploring various aspects of *`r inf_agent`* biology, diagnostics, epidemiology, and treatment. However, this is by no means an exhaustive list: you should further explore the relevant peer-reviewed literature independently.  
 :::
