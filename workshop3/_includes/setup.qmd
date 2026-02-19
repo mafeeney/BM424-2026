@@ -1,39 +1,10 @@
 ```{r GlobalSetup, include=FALSE}
 # Define global variables that will be used across the book
-# These need to be edited each year: workshop3_date
+# These need to be edited each year: year, workshop3_date
 
 #Set a seed for each group page
- Define the link for the hospital image based on the group variable
-if (group == "A") {
-  set.seed(123)
-} else if (group == "B") {
-  set.seed(234)
-} else if (group == "C") {
-  set.seed(345)
-} else if (group == "D") {
-  set.seed(456)
-} else if (group == "E") {
-  set.seed(567)
-} else if (group == "F") {
-  set.seed(678)
-} else if (group == "G") {
-  set.seed(789)
-} else if (group == "H") {
-  set.seed(890)
-} else if (group == "I") {
-  set.seed(901)
-} else if (group == "J") {
-  set.seed(135)
-} else if (group == "K") {
-  set.seed(246)
-} else if (group == "L") {
-  set.seed(357)
-} else if (group == "M") {
-  set.seed(468)
-} else {
-  # Handle other cases if needed
-  set.seed(345)
-}
+year <- 2026
+set.seed(groupseed + year)
 
 
 #Define variables for the dates: 

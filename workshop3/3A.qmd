@@ -11,6 +11,7 @@ dis_name <- "Legionellosis"
 inf_agent <- "Legionella pneumophila"
 inf_type <- "bact"
 group <- "A"
+groupseed <- 1246
 
 ```
 {{< include _includes/setup.qmd >}}

@@ -11,6 +11,7 @@ dis_name <- "influenza"
 inf_agent <- "Alphainfluenzavirus influenzae"
 inf_type <- "vir"
 group <- "B"
+groupseed <- 1234
 ```
 {{< include _includes/setup.qmd >}}
 ::: panel-tabset
