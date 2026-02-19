@@ -11,9 +11,10 @@ dis_name <- "Legionellosis"
 inf_agent <- "Legionella pneumophila"
 inf_type <- "bact"
 group <- "A"
-set.seed(123123) # Ensures reproducibility
-
+groupseed <- 1246
 ```
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}

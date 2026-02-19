@@ -1,9 +1,9 @@
 ```{r GlobalSetup, include=FALSE}
 # Define global variables that will be used across the book
-# These need to be edited each year: year, workshop3_date
+# These need to be edited each year: workshop3_date
 
 #Set a seed for each group page
-year <- 2026
+year <- as.numeric(format(Sys.Date(), "%Y"))
 set.seed(groupseed + year)
 
 
@@ -14,5 +14,10 @@ news_date <- format(news_date, "%d %B, %Y")
 
 #Define a name for the city newspaper
 paper_name <- sample(c("Times", "Courier", "Express", "Chronicle", "Gazette", "Herald", "News", "Metro", "Sentinel", "Beacon", "Journal"), 1)
+
+# Define the number of deaths, cases, and ICU cases for the outbreak so far
+outbreak_deaths <- sample(10:30, 1)
+outbreak_cases <- sample(400:700, 1)
+outbreak_icu <- sample(10:30, 1)
 
 ```

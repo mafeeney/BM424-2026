@@ -10,8 +10,10 @@ dis_name <- "Campylobacteriosis"
 inf_agent <- "Campylobacter jejuni"
 inf_type <- "bact"
 group <- "D"
-
+groupseed <- 6802
 ```
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}

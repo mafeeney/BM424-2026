@@ -11,10 +11,10 @@ dis_name <- "XDR tuberculosis"
 inf_agent <- "Mycobacterium tuberculosis"
 inf_type <- "bact"
 group <- "G"
-set.seed(789789) # Ensures reproducibility
-
-
+groupseed <- 1116
 ```
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}

@@ -11,10 +11,10 @@ dis_name <- "anthrax"
 inf_agent <- "Bacillus anthracis"
 inf_type <- "bact"
 group <- "I"
-set.seed(987654) # Ensures reproducibility
-
+groupseed <- 3279
 ```
-
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}

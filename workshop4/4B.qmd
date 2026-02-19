@@ -11,10 +11,10 @@ dis_name <- "influenza"
 inf_agent <- "Alphainfluenzavirus influenzae"
 inf_type <- "vir"
 group <- "B"
-set.seed(234234) # Ensures reproducibility
-
-
+groupseed <- 1234
 ```
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}

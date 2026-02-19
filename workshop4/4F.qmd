@@ -11,10 +11,10 @@ dis_name <- "meningitis"
 inf_agent <- "Neisseria meningitidis"
 inf_type <- "bact"
 group <- "F"
-set.seed(678678) # Ensures reproducibility
-
-
+groupseed <- 7765
 ```
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}

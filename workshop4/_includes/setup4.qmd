@@ -1,0 +1,19 @@
+```{r GlobalSetup4, include=FALSE}
+# Define global variables that will be used across the book
+# These need to be edited each year: workshop3_date
+
+#Probably do not need to run the following 
+#currently setup4 is being run after setup3, which already sets the seed for each group - but these can be commented out if needed, later on
+#Set a seed for each group page
+#year <- as.numeric(format(Sys.Date(), "%Y"))
+#set.seed(groupseed + year)
+
+
+
+# Define the number of deaths, cases, and ICU cases for the outbreak for workshop 4
+# old code was: 
+#outbreak_deaths <- sample(10:30, 1)
+#outbreak_cases <- sample(400:700, 1)
+#outbreak_icu <- sample(10:30, 1)
+
+```

@@ -11,9 +11,11 @@ dis_name <- "Group A Streptococcus infection"
 inf_agent <- "Streptococcus pyogenes"
 inf_type <- "bact"
 group <- "H"
-set.seed(890) # Ensures reproducibility
-
+groupseed <- 8883
 ```
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
+
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}

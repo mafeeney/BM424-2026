@@ -6,13 +6,6 @@ library(knitr)
 
 ### Pandemic Report {.unnumbered}
 
-```{r A0, echo=FALSE}
-outbreak_deaths <- floor(runif(1, min = 10, max = 30))
-outbreak_cases <- floor(runif(1, min = 400, max = 700))
-outbreak_icu <- floor(runif(1, min = 10, max = 30))
-
-```
-
 *Briefing:*
 
 * Based on collated hospital reports and death certificates, it is believed that there have been `r outbreak_deaths` deaths due to `r dis_name` in `r city_name` thus far

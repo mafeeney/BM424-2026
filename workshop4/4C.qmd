@@ -11,10 +11,10 @@ dis_name <- "MRSA"
 inf_agent <- "Staphylococcus aureus"
 inf_type <- "bact"
 group <- "C"
-set.seed(345345) # Ensures reproducibility
-
-
+groupseed <- 7809
 ```
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}

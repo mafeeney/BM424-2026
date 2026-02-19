@@ -11,10 +11,10 @@ dis_name <- "Listeriosis"
 inf_agent <- "Listeria monocytogenes"
 inf_type <- "bact"
 group <- "E"
-set.seed(567) # Ensures reproducibility
-
-
+groupseed <- 9002
 ```
+{{< include ../workshop3/_includes/setup.qmd >}}
+{{< include _includes/setup4.qmd >}}
 
 ::: panel-tabset
 ## Minutes from the last Emergency Pandemic Response Team Meeting {.unnumbered}
