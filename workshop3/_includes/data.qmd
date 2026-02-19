@@ -16,12 +16,12 @@ library(knitr)
 
 ### City Demographics, Polling, and Budget {.unnumbered}
 
-The current population of `r city_name` (as of December 2022) is `r sample(150000:170000, size=1)`. The demographic data for the city is shown below.
+The current population of `r city_name` (as of `r census_date`) is `r sample(150000:170000, size=1)`. The demographic data for the city is shown below.
 
 ```{r A1, echo=FALSE, fig.cap="City demographics (Source: Office for National Statistics)"}
 
 Pop <- c(sample(150000:170000, size=3, replace=TRUE), sample(170000:180000, size=3, replace=TRUE), sample(190000:170000, size=2, replace=TRUE), sample(150000:170000, size=2, replace=TRUE))
-PopYears <- c(2012:2021)
+PopYears <- c((census_year-9):census_year)
 population <- data.frame(Pop, PopYears)
 ggplot(data = population, aes(x=PopYears, y=Pop)) + 
   geom_point() +
@@ -33,18 +33,19 @@ ggplot(data = population, aes(x=PopYears, y=Pop)) +
 
 Demog <- c((rep("Births", 10)), (rep("Deaths", 10)))
 Num <- c(sample(1000:2000, size=10, replace=TRUE), sample(500:1500, size=8, replace=TRUE), sample(3000:5500, size=2, replace=TRUE))
-DemogYears <- c(rep(2012:2021, 2))
+DemogYears <- c(rep((census_year - 9):census_year, 2))
 birthdeath <- data.frame(Demog, Num, DemogYears)
 ggplot(data = birthdeath, aes(x=DemogYears, y=Num, group=Demog, colour=Demog)) + 
   geom_point() +
   geom_line() +
   labs(y = "Number of births and deaths in the city (estimated)", x = "Year", colour = "Demographics") +
   scale_y_continuous(limits=c(0, 5500)) + 
+  scale_x_continuous(breaks = seq(min(Year), max(Year), by = 1)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
   scale_color_discrete(name="")
 ```
 
-The current provost of `r city_name` was elected in `r sample(2012:2021, size=1)`, as a member of a popular political party who made a number of election promises regarding a "Green New Deal" for `r city_name`.
+The current provost of `r city_name` was elected in `r sample((census_year - 15):(census_year - 1), size=1)`, as a member of a popular political party who made a number of election promises regarding a "Green New Deal" for `r city_name`.
 
 ```{r A2, fig.cap="Voting intention by city residents (Source: YouGov polling)", echo=FALSE}
 
@@ -55,7 +56,7 @@ party_names <- sample(c("Progressive Future", "United Workers", "Eco Harmony",
                         "Liberty League"), 5)
 
 # Create a vector of party assignments
-Party <- rep(party_names, each = 13)  # 13 years per party (2012–2024)
+Party <- rep(party_names, each = 13)  # 13 years per party
 
 # Generate random polling data for each party
 Polls <- c(sample(1:3, size=13, replace=TRUE), 
@@ -64,8 +65,8 @@ Polls <- c(sample(1:3, size=13, replace=TRUE),
            sample(5:10, size=13, replace=TRUE), 
            sample(1:2, size=13, replace=TRUE))
 
-# Generate years from 2012 to 2024 for each party
-PolYears <- rep(2012:2024, times = 5)
+# Generate years (13) for each party
+PolYears <- rep((census_year - 12):census_year, times = 5)
 
 # Create the data frame
 politics <- data.frame(Party, Polls, PolYears)
@@ -108,9 +109,9 @@ kable(x = Councillors,
 
 ```
 <br><br>
-The overall budget (expenditures) for the 2023-2024 financial year was £`r sample(400000000:600000000, size=1)`. A summary of expenditures by category for this financial year is shown below. 
+The overall budget (expenditures) for the previous financial year was £`r sample(400000000:600000000, size=1)`. A summary of expenditures by category for this financial year is shown below. 
 
-```{r A4, fig.cap="Public expenditures by category for the 2023-2024 financial year", echo=FALSE}
+```{r A4, fig.cap="Public expenditures by category for the previous financial year", echo=FALSE}
 
 # Define the categories
 categories <- c("Education", "Industry and Agriculture", "Social Care", 
@@ -137,11 +138,13 @@ ggplot(expenses, aes(x="", y=value, fill=Category)) +
 
 ```
 
+In addition to these expenditures, the city council has a budget for an emergency fund, projected to be £`r sample(50000:90000, size=1)` for the current financial year. 
+
 ### Hospital and Hospital Budget {.unnumbered}
 
-The annual operating budget for financial year 2022-2023 was £`r round(runif(1, 1, 10), 1)` million, and average expenditures are shown by category in the figure below. 
+The annual operating budget for the last financial year was £`r round(runif(1, 1, 10), 1)` million, and average expenditures are shown by category in the figure below. 
 
-```{r A5, fig.cap="Hospital expenditures by category for financial year 2023-2024", echo=FALSE}
+```{r A5, fig.cap="Hospital expenditures by category for the previous financial year", echo=FALSE}
 
 # Original expense values
 expense_values <- c(25, 17, 9, 12)
