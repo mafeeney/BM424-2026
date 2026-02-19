@@ -1,13 +1,15 @@
 ```{r GlobalSetup, include=FALSE}
 # Define global variables that will be used across the book
-# These need to be edited each year: workshop3_date
+# These need to be edited each year: workshop3_date (with the date that workshop 3 will run)
 
 #Set a seed for each group page
+#this will allow reproducible, random outcomes for subsequent variables that are set using sample() or otherwise ranomised
 year <- as.numeric(format(Sys.Date(), "%Y"))
 set.seed(groupseed + year)
 
 
 #Define variables for the dates: 
+#Workshop 3 date should be entered manually; other dates (for news articles, census, etc. will be calculated from this)
 workshop3_date <- as.Date("2026-02-27", format="%Y-%m-%d")
 news_date <- workshop3_date - sample(c(3:6), 1)
 news_date <- format(news_date, "%d %B, %Y")
