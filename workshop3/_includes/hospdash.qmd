@@ -130,11 +130,11 @@ if (covid1 > covid2) {
 }
 
 # Set the number of other viral infections
-virus1 <- sample(50:100, 1) #last week
-virus2 <- sample(150:250, 1) #this week
+virus1 <- sample(500:1000, 1) #last week
+virus2 <- sample(1500:2500, 1) #this week
 
 
-covid_vacc <- sample(60:75, 1)
+covid_vacc <- sample(20:40, 1)
 vacc_rate <- sample(93:96, 1)
 
 ```

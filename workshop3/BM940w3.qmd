@@ -5,10 +5,10 @@ title: "Group BM940"
 ```{r setupBM940, include=FALSE}
 
 #define variables for each group: city and hospital name, infectious agent and disease, group letter
-city_name <- "Inverkeld"
-hosp_name <- "Queen Rose"
-dis_name <- "an unknown disease"
-inf_agent <- "an unknown pathogen"
+city_name <- "Airtyre"
+hosp_name <- "Westview"
+dis_name <- "unknown disease"
+inf_agent <- "unknown pathogen"
 inf_type <- "bact"
 group <- "BM940"
 groupseed <- 940940
