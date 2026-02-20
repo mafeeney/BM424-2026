@@ -7,8 +7,8 @@ title: "Group BM940"
 #define variables for each group: city and hospital name, infectious agent and disease, group letter
 city_name <- "Airtyre"
 hosp_name <- "Westview"
-dis_name <- "unknown disease"
-inf_agent <- "unknown pathogen"
+dis_name <- "Disease X"
+inf_agent <- "Pathogen X"
 inf_type <- "bact"
 group <- "BM940"
 groupseed <- 940940
@@ -24,13 +24,13 @@ groupseed <- 940940
 
 {{< include _includes/city.qmd >}}
 
-## *`r inf_agent`* {.unnumbered}
+## *`r dis_name` Data* {.unnumbered}
 
+{{< include _includes/pathogen940.qmd >}}
 
+## *`r dis_name`* - suggested reading {.unnumbered}
 
-## *`r inf_agent`* - suggested reading {.unnumbered}
-
-
+{{< include _includes/ref940.qmd >}}
 
 ## Public Opinion: News and E-mails {.unnumbered}
 
@@ -40,9 +40,8 @@ groupseed <- 940940
 
 {{< include _includes/data.qmd >}}
 
-* You can find more key information about the main hospital in `r city_name`, the `r hosp_name` in the [hospital dashboard](dashboardA.qmd).
+* You can find more key information about the main hospital in `r city_name`, the `r hosp_name` in the hospital dashboard.
 
-### Epidemiological Data {.unnumbered}
 
 
 

@@ -1,0 +1,23 @@
+
+::: callout-tip
+The following list of references is provided as a starting place for you to begin exploring various aspects of  biology, diagnostics, epidemiology, and treatment, when dealing with an unknown pathogen. However, this is by no means an exhaustive list: you should further explore the relevant peer-reviewed literature independently.  
+:::
+
+* [Research response to pathogen X during a pandemic](https://www.who.int/news-room/events/detail/2024/01/19/default-calendar/Research-response-to-pathogen-X-during-a-pandemic) - WHO consultation report
+
+* Williams, B.A., Jones, C.H., Welch, V. et al. Outlook of pandemic preparedness in a post-COVID-19 world. npj Vaccines 8, 178 (2023). https://doi.org/10.1038/s41541-023-00773-0
+
+* Azizi, Ali et al. “Future directions in combating outbreaks at CEPI Centralized Laboratory Network.” Human vaccines & immunotherapeutics vol. 21,1 (2025): 2561458. doi:10.1080/21645515.2025.2561458
+
+* Chen, Wenxiu et al. “Utilizing wastewater surveillance to model behavioural responses and prevent healthcare overload during "Disease X" outbreaks.” Emerging microbes & infections vol. 14,1 (2025): 2437240. doi:10.1080/22221751.2024.2437240
+
+* Zhao, Huixuan et al. “Accelerating drug discovery for Disease X via an AlphaFold2 driven drug repositioning strategy.” Physical chemistry chemical physics : PCCP vol. 27,42 22354-22365. 29 Oct. 2025, doi:10.1039/d5cp01365h
+
+* Kavruk, Murat et al. “Biotechnological Preparedness for Novel Pandemics: Diagnostic Performance of IVDS Against SARS-CoV-2.” MicrobiologyOpen vol. 14,4 (2025): e70042. doi:10.1002/mbo3.70042
+
+* Pellejero-Sagastizábal, Galadriel et al. “Delayed correct diagnoses in emerging disease outbreaks: historical patterns and lessons for contemporary responses.” Clinical microbiology and infection : the official publication of the European Society of Clinical Microbiology and Infectious Diseases vol. 31,8 (2025): 1298-1306. doi:10.1016/j.cmi.2025.04.007
+
+* Wu, Zhenchao et al. “To face Disease X: building resilient futures in the age of emergent threats.” BMJ global health vol. 10,7 e020479. 5 Jul. 2025, doi:10.1136/bmjgh-2025-020479
+
+
+

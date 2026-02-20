@@ -39,7 +39,7 @@ groupseed <- 7809
 
 {{< include _includes/data.qmd >}}
 
-* You can find more key information about the main hospital in `r city_name`, the `r hosp_name` in the [hospital dashboard](dashboardC.qmd).
+* You can find more key information about the main hospital in `r city_name`, the `r hosp_name` in the hospital dashboard.
 
 ### Epidemiological Data {.unnumbered}
 
